@@ -7,7 +7,7 @@
 {
   imports =
     [ 
-      
+      ./hardware
     ];
 
   boot.loader.systemd-boot.enable = true;
@@ -50,13 +50,7 @@ services.xserver = {
  
 
   services.printing.enable = true;
-  service.tailscale.enable = true;
-
-  programs.git = {
-    enable = true;
-    userName  = "Wes Fisher";
-    userEmail = "wfisher@praetor.tel";
-  };
+  services.tailscale.enable = true;
 
   hardware.pulseaudio.enable = false;
   security.rtkit.enable = true;
