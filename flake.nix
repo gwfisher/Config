@@ -11,7 +11,8 @@
 		system = "x86_64-linux";
 		modules = [ 
 			./hosts/odin/configuration.nix
-			./hosts/odin/hardware-configuration.nix 
+			./hosts/odin/hardware-configuration.nix
+			./hosts
 		];
 	};
   };

@@ -1,6 +1,6 @@
 {
     imports =
     [ 
-      ./nivida.nix
+      ./nvidia.nix
     ];
 }
