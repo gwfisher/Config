@@ -1,5 +1,6 @@
 {
     imports = [
         ../users
+        ../modules/virtualization
     ];
 }

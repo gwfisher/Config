@@ -61,23 +61,13 @@ services.xserver = {
     pulse.enable = true;
   };
 
-  users.users.wfisher = {
-    isNormalUser = true;
-    description = "Wes Fisher";
-    extraGroups = [ "networkmanager" "wheel" ];
-    packages = with pkgs; [
-    	google-chrome
-      spotify
-	    vscode
-      tailscale
-    ];
-  };
-
   nixpkgs.config.allowUnfree = true;
 
   environment.systemPackages = with pkgs; [
   	vim
 	  git
+    wget
+    zsh
 	];
 
   system.stateVersion = "24.05"; # Did you read the comment?
