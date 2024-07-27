@@ -1,6 +1,9 @@
 { config, pkgs, ...}:
 {
-	imports = [ ./modules/ssh ];
+	imports = [ 
+		./modules/ssh
+		./dotfiles 
+	];
 
     home.username = "wfisher";
 
@@ -36,8 +39,19 @@
 	};
 
     programs.kitty = {
-        enable = true;
-    };
+		enable = true;
+		settings = {
+				font_family = "Inconsolata";
+				font_size = "12";
+				tab_bar_edge = "top";
+				tab_bar_style = "powerline";
+				tab_powerline_style = "angled";
+				allow_remote_control = "yes";
+				shell_integration = "enabled";
+
+		};
+		extraConfig = "include ./nord.conf";
+	};
 
     programs.vscode = {
         enable = true;
