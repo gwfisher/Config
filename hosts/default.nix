@@ -1,8 +1,8 @@
 { pkgs, config, ...}:
 {
     imports = [
-        ../users
         ../modules/virtualization
+        ../users
     ];
 
      environment.systemPackages = with pkgs; [

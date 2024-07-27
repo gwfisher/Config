@@ -1,7 +1,6 @@
 { config, pkgs, ...}:
 {
     home.username = "wfisher";
-    home.homeDirectory = "/home/wfisher";
 
     programs.zsh = {
 		enable = true;
@@ -15,5 +14,7 @@
 			update = "sudo nixos-rebuild switch";
 		};
 	};
+
+    home.stateVersion = "24.05";
 
 }

@@ -1,5 +1,9 @@
+{ config, pkgs, ...}:
+
 {
-    imports = [
-        ./wfisher
-    ];
+    users.users.wfisher = {
+    	isNormalUser = true;
+    	description = "Wes Fisher";
+    	extraGroups = [ "networkmanager" "wheel" "podman"];
+  	};
 }
