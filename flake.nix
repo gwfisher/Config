@@ -19,8 +19,8 @@
           		{
             		home-manager.useGlobalPkgs = true;
             		home-manager.useUserPackages = true;
-					home.username = "wfisher";
-					home.homeDirectory = "/home/wfisher";
+
+					home-manager.users.wfisher = import ./users/wfisher/home.nix;
 				}
 			];
 		};
