@@ -63,13 +63,6 @@ services.xserver = {
 
   nixpkgs.config.allowUnfree = true;
 
-  environment.systemPackages = with pkgs; [
-  	vim
-	  git
-    wget
-    zsh
-	];
-
   system.stateVersion = "24.05"; # Did you read the comment?
 
 }

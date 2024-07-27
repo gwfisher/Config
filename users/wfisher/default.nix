@@ -2,20 +2,21 @@
 
 {
     users.users.wfisher = {
-    isNormalUser = true;
-    description = "Wes Fisher";
-    extraGroups = [ "networkmanager" "wheel" ];
-    packages = with pkgs; [
-    	google-chrome
-        spotify
-	    vscode
-        tailscale
-        kitty
-		discord
-    ];
-  };
+    	isNormalUser = true;
+    	description = "Wes Fisher";
+    	extraGroups = [ "networkmanager" "wheel" "podman"];
+    	packages = with pkgs; [
+    		google-chrome
+        	spotify
+	    	vscode
+        	tailscale
+			discord
+			obsidian
+			kitty
+    	];
+  	};
 
-  programs.zsh = {
+  	programs.zsh = {
 		enable = true;
 		enableCompletion = true;
 		oh-my-zsh = {
