@@ -26,6 +26,15 @@
 				}
 			];
 		};
+		nixosConfigurations.odin = nixpkgs.lib.nixosSystem {
+			system = "x86_64-linux";
+			modules = [ 
+				./hosts/yggdrasil/configuration.nix
+				./hosts/yggdrasil/hardware-configuration.nix
+				./hosts
+				sops-nix.nixosModules.sops
+			];
+		};
 	};
 }
 
