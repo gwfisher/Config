@@ -7,7 +7,7 @@
 {
   imports =
     [ 
-      ./hardware
+      ../../modules/hardware/nvidia
     ];
 
   boot.loader.systemd-boot.enable = true;
