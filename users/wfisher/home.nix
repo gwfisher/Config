@@ -12,6 +12,8 @@
 		pkgs.discord
 		pkgs.prismlauncher
 		pkgs.conky
+		pkgs.onlyoffice-bin
+		pkgs.obsidian
 	];
 
     programs.zsh = {
@@ -68,6 +70,20 @@
 
 	programs.chromium = {
 		enable = true;
+	};
+
+	services.redshift = {
+    	enable = true;
+    	brightness = {
+      		day = "1";
+      		night = "0.8";
+    	};
+    	temperature = {
+      		day = 5500;
+      		night = 3700;
+    	};
+		latitude = "32.448734";
+		longitude = "-99.733147";
 	};
 
     home.stateVersion = "24.05";
