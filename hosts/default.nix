@@ -9,8 +9,9 @@
   	    vim
 	    git
         wget
-        zsh
         direnv
         tmux
 	];
+
+    programs.zsh.enable = true;
 }

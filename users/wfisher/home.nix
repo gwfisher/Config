@@ -10,6 +10,7 @@
 	home.packages = [
 		pkgs.spotify
 		pkgs.discord
+		pkgs.prismlauncher
 	];
 
     programs.zsh = {
