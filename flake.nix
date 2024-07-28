@@ -26,7 +26,7 @@
 				}
 			];
 		};
-		nixosConfigurations.odin = nixpkgs.lib.nixosSystem {
+		nixosConfigurations.yggdrasil = nixpkgs.lib.nixosSystem {
 			system = "x86_64-linux";
 			modules = [ 
 				./hosts/yggdrasil/configuration.nix
