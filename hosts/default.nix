@@ -11,6 +11,12 @@
         wget
         direnv
         tmux
+        sshfs
+        gnome-tweaks
+        bash
+        killall
+        unzip
+        zstd
 	];
 
     programs.zsh.enable = true;

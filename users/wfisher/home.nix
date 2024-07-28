@@ -11,6 +11,7 @@
 		pkgs.spotify
 		pkgs.discord
 		pkgs.prismlauncher
+		pkgs.conky
 	];
 
     programs.zsh = {
@@ -39,6 +40,12 @@
 		userEmail = "wfisher@praetor.tel";
 	};
 
+	programs.neovim = {
+		enable = true;
+		viAlias = true;
+  		vimAlias = true;
+	};
+
     programs.kitty = {
 		enable = true;
 		settings = {
@@ -49,6 +56,7 @@
 				tab_powerline_style = "angled";
 				allow_remote_control = "yes";
 				shell_integration = "enabled";
+				linux_display_server = "x11";
 
 		};
 		extraConfig = "include ./nord.conf";
