@@ -17,6 +17,7 @@
         killall
         unzip
         zstd
+        kitty
 	];
 
     programs.zsh.enable = true;

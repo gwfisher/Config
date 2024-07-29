@@ -26,6 +26,7 @@
 		};
 		shellAliases = {
 			update = "sudo nixos-rebuild switch";
+			ssh = "kitty +kitten ssh";
 		};
 	};
 
