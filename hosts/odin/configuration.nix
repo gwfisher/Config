@@ -8,6 +8,7 @@
   imports =
     [ 
       ../../modules/hardware/nvidia
+      ./modules/hardware/audio
     ];
 
   boot.loader.systemd-boot.enable = true;
