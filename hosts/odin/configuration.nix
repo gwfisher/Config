@@ -48,7 +48,11 @@ i18n.extraLocaleSettings = {
   services.printing.enable = true;
   services.tailscale.enable = true;
 
-  hardware.pulseaudio.enable = false;
+  hardware.bluetooth.settings = {
+    General = {
+      Enable = "Source,Sink,Media,Socket";
+    };
+  };
   security.rtkit.enable = true;
   services.pipewire = {
     enable = true;
