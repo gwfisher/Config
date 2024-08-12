@@ -8,42 +8,62 @@
   imports =
     [ 
       ../../modules/hardware/nvidia
-      ./modules/hardware/audio
     ];
+
+  environment.systemPackages = with pkgs; [
+    virtiofsd
+  ];
 
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
 
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
-  networking.hostName = "odin"; # Define your hostname.
+  networking.hostName = "odin";
   services.hardware.bolt.enable = true;
 
   networking.networkmanager.enable = true;
 
   # XServer
-services.xserver = {
-  enable = true;
-  displayManager.gdm.enable = true;
-  desktopManager.gnome.enable = true;
+  services.xserver = {
+    enable = true;
+    displayManager.gdm.enable = true;
+    desktopManager.gnome.enable = true;
+  };
+
+  time.timeZone = "America/Chicago";
+
+  i18n.defaultLocale = "nb_NO.UTF-8";
+
+  i18n.extraLocaleSettings = {
+    LC_ADDRESS = "en_US.UTF-8";
+    LC_IDENTIFICATION = "en_US.UTF-8";
+    LC_MEASUREMENT = "en_US.UTF-8";
+    LC_MONETARY = "en_US.UTF-8";
+    LC_NAME = "en_US.UTF-8";
+    LC_NUMERIC = "en_US.UTF-8";
+    LC_PAPER = "en_US.UTF-8";
+    LC_TELEPHONE = "en_US.UTF-8";
+    LC_TIME = "en_US.UTF-8";
+  };
+
+  hardware.pulseaudio.enable = false;
+
+  services.pipewire = {
+    enable = true;
+    alsa.enable = true;
+    alsa.support32Bit = true;
+    jack.enable = true;
+  };
+
+  services.pipewire.extraConfig.pipewire."92-low-latency" = {
+  context.properties = {
+    default.clock.rate = 48000;
+    default.clock.quantum = 32;
+    default.clock.min-quantum = 32;
+    default.clock.max-quantum = 32;
+  };
 };
-
-time.timeZone = "America/Chicago";
-
-i18n.defaultLocale = "nb_NO.UTF-8";
-
-i18n.extraLocaleSettings = {
-  LC_ADDRESS = "en_US.UTF-8";
-  LC_IDENTIFICATION = "en_US.UTF-8";
-  LC_MEASUREMENT = "en_US.UTF-8";
-  LC_MONETARY = "en_US.UTF-8";
-  LC_NAME = "en_US.UTF-8";
-  LC_NUMERIC = "en_US.UTF-8";
-  LC_PAPER = "en_US.UTF-8";
-  LC_TELEPHONE = "en_US.UTF-8";
-  LC_TIME = "en_US.UTF-8";
-};
-
  
 
   services.printing.enable = true;
@@ -54,5 +74,4 @@ i18n.extraLocaleSettings = {
   nixpkgs.config.allowUnfree = true;
 
   system.stateVersion = "24.05"; # Did you read the comment?
-
 }

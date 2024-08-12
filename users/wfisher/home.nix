@@ -12,8 +12,11 @@
 		pkgs.discord
 		pkgs.prismlauncher
 		pkgs.conky
-		pkgs.onlyoffice-bin
 		pkgs.obsidian
+		pkgs.vlc
+		pkgs.virt-manager
+		pkgs.yt-dlp
+		pkgs.lollypop
 	];
 
     programs.zsh = {
@@ -27,6 +30,7 @@
 		shellAliases = {
 			update = "sudo nixos-rebuild switch";
 			ssh = "kitty +kitten ssh";
+			joy = "yt-dlp --extract-audio --audio-format mp3 --audio-quality 0";
 		};
 	};
 
