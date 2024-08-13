@@ -11,7 +11,7 @@
     ];
 
   environment.systemPackages = with pkgs; [
-    virtiofsd
+    
   ];
 
   boot.loader.systemd-boot.enable = true;
